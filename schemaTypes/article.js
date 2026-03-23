@@ -38,6 +38,14 @@ export const article = defineType({
       type: 'array',
       of: [{type: 'block'}],
     }),
+    defineField({
+      name: 'pdfFile',
+      title: 'Arquivo PDF Oficial (Opcional)',
+      type: 'file',
+      options: {
+        accept: '.pdf',
+      },
+    }),
   ],
   preview: {
     select: {
