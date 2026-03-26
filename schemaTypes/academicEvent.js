@@ -33,6 +33,22 @@ export const academicEvent = defineType({
       description: 'Texto curto para aparecer no cartão da Timeline',
     }),
     defineField({
+      name: 'eventImage',
+      title: 'Imagem do Evento',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'altText',
+          title: 'Texto Alternativo',
+          type: 'string',
+          description: 'Descrição da imagem para acessibilidade',
+        }),
+      ],
+    }),
+    defineField({
       name: 'fullDescription',
       title: 'Descrição Completa',
       type: 'array',

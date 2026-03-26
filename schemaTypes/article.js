@@ -33,6 +33,22 @@ export const article = defineType({
       rows: 4,
     }),
     defineField({
+      name: 'featuredImage',
+      title: 'Imagem de Destaque',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'altText',
+          title: 'Texto Alternativo',
+          type: 'string',
+          description: 'Descrição da imagem para acessibilidade',
+        }),
+      ],
+    }),
+    defineField({
       name: 'body',
       title: 'Corpo do Texto',
       type: 'array',
