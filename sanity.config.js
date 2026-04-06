@@ -4,7 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 // Tipos singleton (apenas um documento permitido)
-const singletonTypes = new Set(['about', 'siteSettings', 'home'])
+const singletonTypes = new Set(['about', 'home'])
 
 // Ações permitidas para singletons (sem "create" ou "delete")
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
@@ -30,16 +30,6 @@ export default defineConfig({
                 S.document()
                   .schemaType('home')
                   .documentId('home')
-              ),
-            S.divider(),
-            // Configurações do Site como singleton
-            S.listItem()
-              .title('Configurações do Site')
-              .id('siteSettings')
-              .child(
-                S.document()
-                  .schemaType('siteSettings')
-                  .documentId('siteSettings')
               ),
             S.divider(),
             // Sobre Mim como singleton (item fixo, sem botão "+")
